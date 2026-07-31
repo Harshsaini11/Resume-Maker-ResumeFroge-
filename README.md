@@ -20,7 +20,7 @@
 ## 🚀 Live Demo
 
 Check out the live application hosted on GitHub Pages:
-👉 **[Live ResumeForge Web App](https://YOUR_GITHUB_USERNAME.github.io/ResumeForge/)**
+👉 **[Live ResumeForge Web App](https://resume-maker-zgao.onrender.com)**
 
 ---
 
@@ -47,7 +47,7 @@ ResumeForge/
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/Y/ResumeForge.git](https://github.com/YOUR_GITHUB_USERNAME/ResumeForge.git)
+   git clone [[https://github.com/Y/ResumeForge.git](https://github.com/Harshsaini11/Resume-Maker-ResumeFroge-.git)]
 Navigate to project directory:
 
 Bash
@@ -58,10 +58,10 @@ Simply double-click index.html or open it in any web browser!
 👨‍💻 Created By
 Harsh Kumar Saini
 
-Java Developer & Software Engineer
+Web Developer & Software Engineer
 
-💼 LinkedIn: [Your-LinkedIn-URL]
+💼 LinkedIn: [https://www.linkedin.com/in/harsh-saini-317827297]
 
-🐙 GitHub: [Your-GitHub-URL]
+🐙 GitHub: [https://github.com/Harshsaini11/Resume-Maker-ResumeFroge-.git]
 
 © 2026 ResumeForge. Built for developers & professionals.
