@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResumeForge - Dynamic Resume Builder</title>
+    <!-- Professional Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400&family=Fira+Code:wght@400;600&family=Inter:wght@400;500;600;700&family=Lato:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="app-header">
+    <div class="header-container">
+        <div class="brand">
+            <span class="brand-icon">⚡</span>
+            <div class="brand-text">
+                <h1>ResumeForge</h1>
+                <p>Dynamic & ATS-Friendly Resume Builder</p>
+            </div>
+        </div>
+        
+        <div class="header-actions">
+            <div class="live-status">
+                <span class="status-dot"></span>
+                <span id="live-time">Automated ATS Ready</span>
+            </div>
+            <button type="button" class="btn-theme-toggle" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                ✨ Create New
+            </button>
+        </div>
+    </div>
+    </header>
+
+    <div class="main-container">
+        
+        <!-- FORM SECTION -->
+        <div id="form-section" class="form-card">
+            <h2>Enter Resume Details</h2>
+            <form id="resume-form">
+                
+                <!-- Layout Theme Selection -->
+                <fieldset class="theme-fieldset">
+                    <legend>🎨 Choose Resume Layout Structure</legend>
+                    <p class="subtitle-text">Select your preferred layout structure:</p>
+                    
+                    <!-- 🎡 CAROUSEL SLIDER WRAPPER WITH CIRCLE ARROWS -->
+                    <div class="theme-slider-wrapper">
+                        <div class="theme-grid-cards" id="theme-slider">
+                            <!-- Modern Classic -->
+                            <label class="theme-card">
+                                <input type="radio" name="theme" value="modern_classic" checked>
+                                <div class="card-content">
+                                    <div class="svg-preview">
+                                        <svg viewBox="0 0 100 120" width="100%" height="90">
+                                            <rect x="20" y="10" width="60" height="10" rx="2" fill="#1e3a8a"/>
+                                            <line x1="10" y1="26" x2="90" y2="26" stroke="#2563eb" stroke-width="2"/>
+                                            <rect x="10" y="34" width="80" height="6" rx="1" fill="#94a3b8"/>
+                                            <rect x="10" y="44" width="80" height="18" rx="2" fill="#e2e8f0"/>
+                                            <rect x="10" y="68" width="80" height="18" rx="2" fill="#e2e8f0"/>
+                                            <rect x="10" y="92" width="80" height="18" rx="2" fill="#e2e8f0"/>
+                                        </svg>
+                                    </div>
+                                    <h3>1. Modern Classic</h3>
+                                    <span class="layout-tag">Single Column</span>
+                                </div>
+                            </label>
+
+                            <!-- Left Sidebar -->
+                            <label class="theme-card">
+                                <input type="radio" name="theme" value="left_sidebar">
+                                <div class="card-content">
+                                    <div class="svg-preview">
+                                        <svg viewBox="0 0 100 120" width="100%" height="90">
+                                            <rect x="5" y="5" width="30" height="110" rx="3" fill="#2563eb"/>
+                                            <circle cx="20" cy="20" r="6" fill="#ffffff"/>
+                                            <rect x="10" y="32" width="20" height="4" rx="1" fill="#ffffff"/>
+                                            <rect x="10" y="40" width="20" height="4" rx="1" fill="#ffffff"/>
+                                            <rect x="10" y="55" width="20" height="20" rx="1" fill="#93c5fd"/>
+                                            <rect x="40" y="10" width="55" height="8" rx="1" fill="#0f172a"/>
+                                            <rect x="40" y="24" width="55" height="25" rx="2" fill="#e2e8f0"/>
+                                            <rect x="40" y="55" width="55" height="25" rx="2" fill="#e2e8f0"/>
+                                            <rect x="40" y="86" width="55" height="25" rx="2" fill="#e2e8f0"/>
+                                        </svg>
+                                    </div>
+                                    <h3>2. Left Sidebar</h3>
+                                    <span class="layout-tag">Split Grid (30/70)</span>
+                                </div>
+                            </label>
+
+                            <!-- Right Sidebar -->
+                            <label class="theme-card">
+                                <input type="radio" name="theme" value="right_sidebar">
+                                <div class="card-content">
+                                    <div class="svg-preview">
+                                        <svg viewBox="0 0 100 120" width="100%" height="90">
+                                            <rect x="5" y="10" width="55" height="8" rx="1" fill="#0f172a"/>
+                                            <rect x="5" y="24" width="55" height="25" rx="2" fill="#e2e8f0"/>
+                                            <rect x="5" y="55" width="55" height="25" rx="2" fill="#e2e8f0"/>
+                                            <rect x="5" y="86" width="55" height="25" rx="2" fill="#e2e8f0"/>
+                                            <rect x="65" y="5" width="30" height="110" rx="3" fill="#2563eb"/>
+                                            <circle cx="80" cy="20" r="6" fill="#ffffff"/>
+                                            <rect x="70" y="32" width="20" height="4" rx="1" fill="#ffffff"/>
+                                            <rect x="70" y="40" width="20" height="4" rx="1" fill="#ffffff"/>
+                                        </svg>
+                                    </div>
+                                    <h3>3. Right Sidebar</h3>
+                                    <span class="layout-tag">Split Grid (70/30)</span>
+                                </div>
+                            </label>
+
+                            <!-- Minimalist Clean -->
+                            <label class="theme-card">
+                                <input type="radio" name="theme" value="minimalist">
+                                <div class="card-content">
+                                    <div class="svg-preview">
+                                        <svg viewBox="0 0 100 120" width="100%" height="90">
+                                            <rect x="10" y="10" width="40" height="6" rx="1" fill="#0f172a"/>
+                                            <line x1="10" y1="20" x2="90" y2="20" stroke="#cbd5e1" stroke-width="1"/>
+                                            <rect x="10" y="26" width="80" height="4" fill="#94a3b8"/>
+                                            <rect x="10" y="34" width="80" height="4" fill="#cbd5e1"/>
+                                            <line x1="10" y1="46" x2="90" y2="46" stroke="#cbd5e1" stroke-width="1"/>
+                                            <rect x="10" y="52" width="80" height="4" fill="#94a3b8"/>
+                                            <rect x="10" y="60" width="80" height="4" fill="#cbd5e1"/>
+                                        </svg>
+                                    </div>
+                                    <h3>4. Minimalist Clean</h3>
+                                    <span class="layout-tag">Lightweight Typography</span>
+                                </div>
+                            </label>
+
+                            <!-- Tech Hero Banner -->
+                            <label class="theme-card">
+                                <input type="radio" name="theme" value="hero_banner">
+                                <div class="card-content">
+                                    <div class="svg-preview">
+                                        <svg viewBox="0 0 100 120" width="100%" height="90">
+                                            <rect x="5" y="5" width="90" height="30" rx="3" fill="#0f172a"/>
+                                            <rect x="15" y="12" width="40" height="6" fill="#38bdf8"/>
+                                            <rect x="15" y="22" width="60" height="4" fill="#94a3b8"/>
+                                            <rect x="5" y="42" width="90" height="20" rx="2" fill="#e2e8f0"/>
+                                            <rect x="5" y="68" width="90" height="20" rx="2" fill="#e2e8f0"/>
+                                            <rect x="5" y="94" width="90" height="20" rx="2" fill="#e2e8f0"/>
+                                        </svg>
+                                    </div>
+                                    <h3>5. Tech Hero Banner</h3>
+                                    <span class="layout-tag">Dark Banner Header</span>
+                                </div>
+                            </label>
+
+                            <!-- Vertical Timeline -->
+                            <label class="theme-card">
+                                <input type="radio" name="theme" value="timeline">
+                                <div class="card-content">
+                                    <div class="svg-preview">
+                                        <svg viewBox="0 0 100 120" width="100%" height="90">
+                                            <line x1="15" y1="10" x2="15" y2="110" stroke="#2563eb" stroke-width="3"/>
+                                            <circle cx="15" cy="25" r="4" fill="#2563eb"/>
+                                            <circle cx="15" cy="60" r="4" fill="#2563eb"/>
+                                            <circle cx="15" cy="95" r="4" fill="#2563eb"/>
+                                            <rect x="25" y="15" width="70" height="22" rx="2" fill="#e2e8f0"/>
+                                            <rect x="25" y="50" width="70" height="22" rx="2" fill="#e2e8f0"/>
+                                            <rect x="25" y="85" width="70" height="22" rx="2" fill="#e2e8f0"/>
+                                        </svg>
+                                    </div>
+                                    <h3>6. Vertical Timeline</h3>
+                                    <span class="layout-tag">Accent Timeline Line</span>
+                                </div>
+                            </label>
+
+                            <!-- Grid Compact -->
+                            <label class="theme-card">
+                                <input type="radio" name="theme" value="grid_compact">
+                                <div class="card-content">
+                                    <div class="svg-preview">
+                                        <svg viewBox="0 0 100 120" width="100%" height="90">
+                                            <rect x="5" y="5" width="42" height="50" rx="3" fill="#e2e8f0"/>
+                                            <rect x="53" y="5" width="42" height="50" rx="3" fill="#e2e8f0"/>
+                                            <rect x="5" y="60" width="42" height="50" rx="3" fill="#e2e8f0"/>
+                                            <rect x="53" y="60" width="42" height="50" rx="3" fill="#e2e8f0"/>
+                                        </svg>
+                                    </div>
+                                    <h3>7. Grid Compact</h3>
+                                    <span class="layout-tag">2-Row Matrix Grid</span>
+                                </div>
+                            </label>
+
+                            <!-- Centered Pro -->
+                            <label class="theme-card">
+                                <input type="radio" name="theme" value="centered">
+                                <div class="card-content">
+                                    <div class="svg-preview">
+                                        <svg viewBox="0 0 100 120" width="100%" height="90">
+                                            <rect x="30" y="10" width="40" height="8" rx="1" fill="#2563eb"/>
+                                            <rect x="20" y="22" width="60" height="4" rx="1" fill="#94a3b8"/>
+                                            <line x1="15" y1="32" x2="85" y2="32" stroke="#cbd5e1" stroke-width="2"/>
+                                            <rect x="10" y="40" width="80" height="20" rx="2" fill="#e2e8f0"/>
+                                            <rect x="10" y="66" width="80" height="20" rx="2" fill="#e2e8f0"/>
+                                        </svg>
+                                    </div>
+                                    <h3>8. Centered Pro</h3>
+                                    <span class="layout-tag">Center Alignment</span>
+                                </div>
+                            </label>
+
+                            <!-- Executive Boxed -->
+                            <label class="theme-card">
+                                <input type="radio" name="theme" value="boxed">
+                                <div class="card-content">
+                                    <div class="svg-preview">
+                                        <svg viewBox="0 0 100 120" width="100%" height="90">
+                                            <rect x="5" y="5" width="90" height="32" rx="3" fill="#f1f5f9" stroke="#2563eb" stroke-dasharray="3 2"/>
+                                            <rect x="5" y="42" width="90" height="32" rx="3" fill="#f1f5f9" stroke="#2563eb" stroke-dasharray="3 2"/>
+                                            <rect x="5" y="80" width="90" height="32" rx="3" fill="#f1f5f9" stroke="#2563eb" stroke-dasharray="3 2"/>
+                                        </svg>
+                                    </div>
+                                    <h3>9. Executive Boxed</h3>
+                                    <span class="layout-tag">Card Boundaries</span>
+                                </div>
+                            </label>
+
+                            <!-- Split Header -->
+                            <label class="theme-card">
+                                <input type="radio" name="theme" value="split_header">
+                                <div class="card-content">
+                                    <div class="svg-preview">
+                                        <svg viewBox="0 0 100 120" width="100%" height="90">
+                                            <rect x="5" y="8" width="40" height="8" rx="1" fill="#0f172a"/>
+                                            <rect x="55" y="8" width="40" height="8" rx="1" fill="#2563eb"/>
+                                            <line x1="5" y1="20" x2="95" y2="20" stroke="#0f172a" stroke-width="2"/>
+                                            <rect x="5" y="28" width="90" height="25" rx="2" fill="#e2e8f0"/>
+                                            <rect x="5" y="58" width="90" height="25" rx="2" fill="#e2e8f0"/>
+                                            <rect x="5" y="88" width="90" height="25" rx="2" fill="#e2e8f0"/>
+                                        </svg>
+                                    </div>
+                                    <h3>10. Split Header</h3>
+                                    <span class="layout-tag">Dual Top Bar</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="color-fieldset">
+                        <legend>🎨 Choose Accent Color</legend>
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <label for="theme-color"><strong>Theme Accent Color:</strong></label>
+                                <input type="color" id="theme-color" name="theme_color" value="#2563eb" style="width: 50px; height: 35px; border: none; cursor: pointer;">
+                            </div>
+                </fieldset>
+                <!-- Font Selector -->
+                <fieldset class="font-fieldset">
+                    <legend>🔤 Choose Resume Font (ATS & Professional Standard)</legend>
+                    <div class="font-select-container">
+                        <label for="font-choice"><strong>Font Family:</strong></label>
+                        <select name="font_family" id="font-choice" class="font-dropdown">
+                            <optgroup label="✨ Sans-Serif (Modern & Clean)">
+                                <option value="Calibri, 'Segoe UI', Arial, sans-serif" style="font-family: Calibri, sans-serif;" selected>Calibri (Corporate Standard)</option>
+                                <option value="Arial, sans-serif" style="font-family: Arial, sans-serif;">Arial (Universal ATS Friendly)</option>
+                                <option value="'Inter', sans-serif" style="font-family: 'Inter', sans-serif;">Inter (Modern Tech)</option>
+                                <option value="'Roboto', sans-serif" style="font-family: 'Roboto', sans-serif;">Roboto (Clean Digital)</option>
+                                <option value="'Poppins', sans-serif" style="font-family: 'Poppins', sans-serif;">Poppins (Contemporary)</option>
+                            </optgroup>
+                            <optgroup label="📜 Serif (Classic & Executive)">
+                                <option value="'Cormorant Garamond', Garamond, serif" style="font-family: 'Cormorant Garamond', serif;">Garamond (Elegant & Compact)</option>
+                                <option value="Georgia, serif" style="font-family: Georgia, serif;">Georgia (Readable Classic)</option>
+                                <option value="'Times New Roman', serif" style="font-family: 'Times New Roman', serif;">Times New Roman (Academic)</option>
+                            </optgroup>
+                            <optgroup label="💻 Monospace (Technical)">
+                                <option value="'Fira Code', monospace" style="font-family: 'Fira Code', monospace;">Fira Code (Developer Special)</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <!-- 3. Personal Details -->
+                <fieldset>
+                    <legend>Personal Details</legend>
+                    <div class="input-grid">
+                        <input type="text" name="full_name" placeholder="Full Name" required>
+                        <input type="text" name="role" placeholder="Target Role (e.g. Java Developer)" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="text" name="phone" placeholder="Phone Number" required>
+                        <input type="text" name="location" placeholder="Location (e.g. Meerut, India)" required>
+                        <input type="text" name="github" placeholder="GitHub URL">
+                        <input type="text" name="linkedin" placeholder="LinkedIn URL">
+                    </div>
+
+                    <div style="margin-top: 15px; background: #f8fafc; padding: 12px; border-radius: 8px; border: 1px dashed #cbd5e1;">
+                        <label><strong>📷 Profile Photo (Optional):</strong></label>
+                        <div class="input-grid" style="margin-top: 8px;">
+                            <input type="file" id="profile-photo-input" accept="image/*">
+                            <select id="photo-shape-select">
+                                <option value="circle" selected>🔵 Circle Shape</option>
+                                <option value="square">🔲 Square Shape</option>
+                            </select>
+                        </div>
+                     </div>
+
+                    <textarea name="summary" rows="3" placeholder="Professional Summary..." required></textarea>
+                </fieldset>
+
+                <!-- 1. EDUCATION (Removable Section) -->
+                <fieldset class="section-fieldset">
+                    <div class="section-header-control">
+                        <legend>Education</legend>
+                        <button type="button" class="delete-section-btn" onclick="this.closest('fieldset').remove()">🗑️ Delete Section</button>
+                    </div>
+                    <div id="education-container"></div>
+                    <button type="button" class="add-btn" id="add-edu-btn">➕ Add Education</button>
+                </fieldset>
+
+                <!-- 2. TECHNICAL SKILLS (Removable Section) -->
+                <fieldset class="section-fieldset">
+                    <div class="section-header-control">
+                        <legend>Technical Skills</legend>
+                        <button type="button" class="delete-section-btn" onclick="this.closest('fieldset').remove()">🗑️ Delete Section</button>
+                    </div>
+                    <div id="skills-container"></div>
+                    <button type="button" class="add-btn" id="add-skill-btn">➕ Add Skill Category</button>
+                </fieldset>
+
+                <!-- 3. WORK EXPERIENCE (Removable Section) -->
+                <fieldset class="section-fieldset">
+                    <div class="section-header-control">
+                        <legend>Work Experience</legend>
+                        <button type="button" class="delete-section-btn" onclick="this.closest('fieldset').remove()">🗑️ Delete Section</button>
+                    </div>
+                    <div id="experience-container"></div>
+                    <button type="button" class="add-btn" id="add-exp-btn">➕ Add Experience</button>
+                </fieldset>
+
+                <!-- 4. KEY PROJECTS (Removable Section) -->
+                <fieldset class="section-fieldset">
+                    <div class="section-header-control">
+                        <legend>Key Projects</legend>
+                        <button type="button" class="delete-section-btn" onclick="this.closest('fieldset').remove()">🗑️ Delete Section</button>
+                    </div>
+                    <div id="projects-container"></div>
+                    <button type="button" class="add-btn" id="add-proj-btn">➕ Add Project</button>
+                </fieldset>
+
+                <!-- 5. 🌟 CUSTOM SECTIONS HOLDER (Is jagah naye sections create honge) -->
+                <div id="custom-sections-container"></div>
+
+                <!-- 6. ➕ ADD NEW SECTION BUTTON (Generate Resume se PEHLE rakhein) -->
+                <div style="margin: 20px 0;">
+                    <button type="button" id="add-custom-section-btn" class="add-section-btn">
+                        ✨ Add Entire New Section (e.g. Certifications, Awards, Languages)
+                    </button>
+                </div>
+
+                <!-- 7. 🚀 SUBMIT BUTTON (ISKO SABSE AKHIR MEIN RAKHEIN) -->
+                <button type="submit" class="submit-btn">Generate Resume 🚀</button>
+            </form>
+        </div>
+
+        <!-- PREVIEW SECTION -->
+        <div id="preview-section" style="display: none;">
+            <div class="action-bar">
+                <button id="edit-btn" class="btn btn-secondary">✏️ Edit Details</button>
+                <button onclick="window.print()" class="btn btn-primary">🖨️ Download / Save PDF</button>
+            </div>
+
+            <div class="active-theme-card-banner">
+                <div class="banner-icon" id="banner-icon">📄</div>
+                <div class="banner-text">
+                    <span>Active Layout Theme:</span>
+                    <strong id="banner-title">Modern Classic (Single Column)</strong>
+                </div>
+            </div>
+
+            <div id="resume-sheet" class="resume-sheet"></div>
+        </div>
+
+    </div>
+
+    <footer class="app-footer">
+    <div class="footer-container">
+        
+        <!-- Left: Brand + Creator Name -->
+        <div class="footer-brand">
+            <span class="brand-icon">⚡</span>
+            <div class="brand-text">
+                <h3>ResumeForge</h3>
+                <p>Created by <strong>Harsh Kumar Saini</strong> | © 2026 All Rights Reserved</p>
+            </div>
+        </div>
+
+        <!-- Right: Badges -->
+        <div class="footer-actions">
+            <div class="footer-badge">
+                <span>✅</span> ATS Standard Ready
+            </div>
+            <div class="footer-badge">
+                <span>🔒</span> 100% Private & Local
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
