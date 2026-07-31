@@ -20,7 +20,7 @@
 ## 🚀 Live Demo
 
 Check out the live application hosted on GitHub Pages:
-👉 **[Live ResumeForge Web App](https://resume-maker-zgao.onrender.com)**
+👉 **[Live ResumeForge Web App : https://resume-maker-zgao.onrender.com/]**
 
 ---
 
